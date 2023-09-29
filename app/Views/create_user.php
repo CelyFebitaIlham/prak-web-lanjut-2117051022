@@ -16,13 +16,35 @@
             <p>Prodi Ilmu Komputer</p>
 
             <label for="">Nama</label>
-            <input name="nama" type="text" placeholder="Masukkan nama">
-        
-            <label>Kelas</label>
-            <input name="kelas" type="text" placeholder="Masukkan kelas">
+            <input name="nama" type="text" placeholder="Masukkan nama" class="form-control 
+            <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" autofocus>
+                <div class="invalid-feedback">
+                    <?= $validation->getError('nama') ?>
+                </div>
+
+            <br><select name="kelas" id="kelas">
+                
+                
+                <?php
+                foreach ($kelas as $item){
+                    ?> 
+                        <option value="<?= $item['id'] ?>">
+                            <?= $item['nama_kelas'] ?>
+                </option>
+                
+
+                <?php
+                }
+
+                ?>
+                </select>
             
             <label>NPM</label> 
-            <input name="npm" type="text" placeholder="Masukkan NPM">
+            <input name="npm" type="text" placeholder="Masukkan NPM" class="form-control 
+            <?= ($validation->hasError('npm')) ? 'is-invalid' : ''; ?>" id="npm" autofocus>
+            <div class="invalid-feedback">
+            <?= $validation->getError('npm') ?>
+            </div>  
             
             <button>Submit</button>
             
