@@ -23,7 +23,7 @@
 
         <h1 class="display-4"><?=$nama ?><h1>
 
-        <p class="lead"><?=$npm ?> | <?=$kelas ?> </p>
+        <p class="lead"><?=$npm ?> | <?=$id_kelas ?> </p>
         </center>
 </selection>
     <!-- ending -->
