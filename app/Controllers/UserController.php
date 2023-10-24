@@ -8,6 +8,7 @@ use App\Models\KelasModel;
 
 class UserController extends BaseController
 {
+    protected $allowedFields = ['nama', 'id_kelas', 'npm', 'foto'];
     public $userModel;
     public $kelasModel;
 
@@ -74,14 +75,23 @@ class UserController extends BaseController
            return redirect()->to('/user/create')->withInput()->with('validation', $validation);
        }
 
-       $this->userModel->saveUser([
-        'nama' => $this->request->getVar('nama'),
-        'npm' => $this->request->getVar('npm'),
-        'id_kelas' =>$this->request->getVar('kelas'),
-        ]);
-
-    return redirect()->to('/user');
-
+       
+       $path = 'assets/uploads/img/';
+       $foto = $this->request->getFile('foto');
+       $name = $foto->getRandomName();
+       
+       if ($foto->move($path, $name)) {
+           $foto = base_url($path . $name);
+        }
+        
+        $this->userModel->saveUser([
+         'nama'     => $this->request->getVar('nama'),
+         'npm'      => $this->request->getVar('npm'),
+         'id_kelas' =>$this->request->getVar('kelas'),
+         'foto'     => $foto
+         ]);
+        return redirect()->to('/user');
+        
 
         //dd($this->request->getVar());
         //1
@@ -136,6 +146,17 @@ class UserController extends BaseController
         // ];
         // return view('profile', $data);
 
+    }
+
+    public function show($id){
+        $user = $this->userModel->getUser($id);
+
+        $data = [
+            'title' => 'Profile',
+            'user'  => $user,
+        ];
+
+        return view('Profile', $data);
     }
     
 }
