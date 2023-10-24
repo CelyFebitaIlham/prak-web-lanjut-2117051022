@@ -4,11 +4,12 @@
 
 <div class="container">
      <div class ="mhs">
-        <form action="<?= base_url('/user/store') ?>" method="POST">
+        <form action="<?= base_url('/user/store') ?>" method="POST" enctype="multipart/form-data">
             <h1>Data Diri</h1>
             <hr>
             <p>Prodi Ilmu Komputer</p>
 
+            <input type="file" name="foto">
             <label for="">Nama</label>
             <input name="nama" type="text" placeholder="Masukkan nama" class="form-control 
             <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" autofocus>
