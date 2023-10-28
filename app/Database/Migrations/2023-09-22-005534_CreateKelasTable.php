@@ -13,7 +13,7 @@ class CreateKelasTable extends Migration
             'id' => [
                 'type'  => 'INT',
                 'constraint'  => 5,
-                'unsigned'  => true, #true, biangan positif
+                'unsigned'  => true, 
                 'auto_increment'  => true,
             ],
 

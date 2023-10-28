@@ -8,6 +8,7 @@ use CodeIgniter\Database\Seeder;
 class KelasSeeder extends Seeder
 {
     public function run()
+    
     {
         $kelasModel = new KelasModel();
 

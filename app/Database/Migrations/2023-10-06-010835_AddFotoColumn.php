@@ -21,7 +21,7 @@ class AddFotoColumn extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('user',['foto']);
+    $this->forge->dropColumn('user',['foto']);
     
     }
 }

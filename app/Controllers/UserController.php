@@ -8,6 +8,7 @@ use App\Models\KelasModel;
 
 class UserController extends BaseController
 {
+    
     protected $allowedFields = ['nama', 'id_kelas', 'npm', 'foto'];
     public $userModel;
     public $kelasModel;

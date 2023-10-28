@@ -13,7 +13,7 @@ class CreateUserTable extends Migration
             'id' => [
                 'type'  => 'INT',
                 'constraint'  => 11,
-                'unsigned'  => true, #true, biangan positif
+                'unsigned'  => true, 
                 'auto_increment'  => true,
             ],
 

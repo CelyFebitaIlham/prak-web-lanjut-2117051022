@@ -16,7 +16,7 @@ class Home extends BaseController
             'kelas' => $kelas,
             'npm' => $npm
         ];
-        return view('profile', $data); #sampe sini jangan lupa jalankan php spark serve untuk akses ke browser
+        return view('profile', $data); 
     }
 
 }

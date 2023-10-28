@@ -54,6 +54,7 @@ class UserModel extends Model
         }
     
     public function updateUser($data, $id){
+        
         return $this->update($id, $data);
     }
     

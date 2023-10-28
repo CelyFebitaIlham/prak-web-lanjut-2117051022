@@ -13,7 +13,7 @@ class KelasModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_kelas']; #koloim yg bisa diisi
+    protected $allowedFields    = ['nama_kelas']; 
 
     // Dates
     protected $useTimestamps = true;

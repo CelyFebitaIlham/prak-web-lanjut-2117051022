@@ -11,7 +11,6 @@
   </nav>
 </div>
 
-
 <selection class="jumbotron text-center">
         <center>
 
