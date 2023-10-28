@@ -27,10 +27,7 @@ body {
     width: 800px;
 }
 
-form {
-    width: 250px;
-    margin: 60px auto;
-}
+
 
 h1 {
     margin: 10px;
@@ -78,7 +75,7 @@ button{
     border: none;
     outline: none;
     padding: 8px;
-    width: 252px;
+    /* width: 252px; */
     color: #00001f;
     font-size: 16px;
     cursor: pointer;
