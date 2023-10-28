@@ -22,10 +22,14 @@
                 <td><?= $user['nama_kelas'] ?></td>
                 <td>
                 <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
-                <a href="" class="btn btn-sm btn-warning">Edit</a>
-                <a href="" class="btn btn-sm btn-danger">Delete</a>
-                </td>
+                <a href="<?= base_url('/user/' . $user['id'] . '/edit') ?>" class="btn btn-sm btn-warning">Edit</a>
 
+                <form action="<?= base_url('user/'. $user['id']) ?>" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <? csrf_field() ?>
+                    <button type="submit" class="btn btn-sm btn-danger" style="padding: 5px 10px; margin: 2px;">Delete</button>
+            </form>
+            </td>
             </tr>
         <?php
         }
