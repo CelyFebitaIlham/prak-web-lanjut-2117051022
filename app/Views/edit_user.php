@@ -12,8 +12,8 @@
         <hr>
          <p>Prodi Ilmu Komputer</p>
             
-            <img src="<?= $user['foto'] ?? '<default-foto>' ?>">
-            <input type="file" name="foto" id="foto">
+            <img src="<?= $user['foto'] ?? '<default-foto>' ?>" width="25%" height="25%">
+            <input type="file" name="foto" id="foto" >
 
             <label for="">Nama</label>
             <input type = "text" name="nama"  placeholder="Masukkan nama" id="input" value="<?= $user['nama']  ?>">

@@ -14,7 +14,7 @@
 <selection class="jumbotron text-center">
         <center>
 
-        <br><img src="<?= $user['foto'] ?? '<default-foto>' ?>" alt="" width="30%" height="30%" >
+        <br><img src="<?= $user['foto'] ?? '<default-foto>' ?>" alt="" width="50%" height="50%" >
 
         <h1 class="display-4"><?= $user['nama'] ?><h1>
 
