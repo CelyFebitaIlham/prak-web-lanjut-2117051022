@@ -1,12 +1,9 @@
 <?= $this->extend('layouts/app') ?>
 
 <?= $this->section('content') ?>
-
 <div>
 <a href="<?= base_url('/user/create') ?>"><Button class="btn btn-primary" style="margin-top : 20px; margin-left : 20px; margin-bottom : 30px;">Tambah Data</Button></a>
-
 <table class = "table table-success table-striped-coloumn table-hover">
-
 <br><thead class ="table-dark">
             <th>ID</th>
             <th>Nama</th>
@@ -39,6 +36,5 @@
         ?>
     </tbody>
 </table>
-
-    </div>
+</div>
 <?= $this->endSection() ?>
