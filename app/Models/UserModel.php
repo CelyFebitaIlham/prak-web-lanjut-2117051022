@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KelasModel extends Model
+class UserModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'kelas';
+    protected $table            = 'user';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_kelas']; 
+    protected $allowedFields    = ['nama', 'npm', 'id_kelas','update_at','foto'];
 
     // Dates
     protected $useTimestamps = true;
@@ -39,7 +39,29 @@ class KelasModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getKelas(){
-        return $this->findAll();
+    public function saveUser($data) {
+        $this->insert($data);
     }
-}
+
+    public function getUser($id = null){
+        if ($id != null) {
+
+            return $this ->select('user.*, kelas.nama_kelas')
+            ->join('kelas', 'kelas.id=user.id_kelas')->find($id);
+        }
+        return $this ->select('user.*, kelas.nama_kelas')
+            ->join('kelas', 'kelas.id=user.id_kelas')->findAll();
+        }
+    
+    public function updateUser($data, $id){
+        
+        return $this->update($id, $data);
+    }
+    
+    public function deleteUser($id){
+        return $this->delete($id);
+    }
+    }
+    
+
+
