@@ -23,4 +23,5 @@ $routes->put('user/(:any)', [UserController::class, 'update']);
 
 $routes->delete('user/(:any)', [UserController::class, 'destroy']);
 
+
 $routes->get('user/(:any)', [UserController::class, 'show']);
