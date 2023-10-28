@@ -1,6 +1,12 @@
 <?php
 
-use CodeIgniter\Router\RouteCollection;
+//use CodeIgniter\Router\RouteCollection;
+
+namespace App\Controllers;
+
+use App\Controllers\BaseController;
+use App\Models\UserModel;
+use App\Models\KelasModel;
 
 /**
  * @var RouteCollection $routes
