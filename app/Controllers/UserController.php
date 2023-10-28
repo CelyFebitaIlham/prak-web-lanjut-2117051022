@@ -8,7 +8,7 @@ use App\Models\KelasModel;
 
 class UserController extends BaseController
 {
-    
+
     protected $allowedFields = ['nama', 'id_kelas', 'npm', 'foto'];
     public $userModel;
     public $kelasModel;
@@ -40,7 +40,8 @@ class UserController extends BaseController
     }
 
     public function create(){
-        $kelasModel = new KelasModel();
+
+       $kelasModel = new KelasModel();
         $kelas = $this->kelasModel->getKelas();
             
         if (session('validation') != null) {

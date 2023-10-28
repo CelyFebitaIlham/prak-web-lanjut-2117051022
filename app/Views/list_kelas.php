@@ -1,10 +1,11 @@
 <?= $this->extend('layouts/app') ?>
 
 <?= $this->section('content') ?>
+
 <div>
 <nav class="navbar navbar-expand-lg bg-secondary-subtle" >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Data Mahasiswa</a>
+    <a class="navbar-brand" href="#">Kelas Mahasiswa</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,14 +18,12 @@
     </div>
   </div>
 </nav>
+<a href="<?= base_url('/kelas/create') ?>"><Button class="btn btn-primary" style="margin-top : 20px; margin-left : 20px; margin-bottom : 30px;">Tambah Data</Button></a>
 
 <table class = "table table-success table-striped-coloumn table-hover">
-<a href="<?= base_url('/user/create') ?>"><Button class="btn btn-primary" style="margin-top : 20px; margin-left : 20px; margin-bottom : 30px;">Tambah Data</Button></a>
 <br><thead class ="table-dark">
             <th>ID</th>
-            <th>Nama</th>
-            <th>NPM</th>
-            <th>Kelas</th>
+            <th>Nama Kelas</th>
             <th>Aksi</th>
     </thead>
     <tbody>
@@ -33,13 +32,12 @@
          ?>
             <tr>
                 <td><?= $user['id'] ?></td>
-                <td><?= $user['nama'] ?> </td>
-                <td><?= $user['npm'] ?> </td>
                 <td><?= $user['nama_kelas'] ?></td>
                 <td>
-                <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
-                <a href="<?= base_url('/user/' . $user['id'] . '/edit') ?>" class="btn btn-sm btn-warning">Edit</a>
-                <form action="<?= base_url('user/'. $user['id']) ?>" method="POST">
+                <a href="<?= base_url('kelas/' . $user['id']) ?>">Detail</a>
+                <a href="<?= base_url('kelas/' . $user['id'] . '/edit') ?>" class="btn btn-sm btn-warning">Edit</a>
+
+            <form action="<?= base_url('kelas/'. $user['id']) ?>" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <? csrf_field() ?>
                     <button type="submit" class="btn btn-sm btn-danger" >Delete</button>
@@ -52,5 +50,6 @@
         ?>
     </tbody>
 </table>
-</div>
+    </div>
+
 <?= $this->endSection() ?>
